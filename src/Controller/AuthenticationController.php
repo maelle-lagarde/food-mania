@@ -2,17 +2,7 @@
 
 namespace App\Controller;
 
-use Dotenv\Dotenv;
 use App\Model\User;
-
-session_start();
-
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
-$dotenv = Dotenv::createImmutable(__DIR__.'/../../');
-$dotenv->load();
 
 class AuthenticationController
 {

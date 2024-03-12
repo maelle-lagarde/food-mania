@@ -30,14 +30,11 @@ $router->map('GET', '/login', function(){
 }, 'login');
 
 $router->map('GET', '/logout', function () {
-    header('Location: View/logout.php');
-    exit();
-});
+    require_once 'View/logout.php';}, 'logout');
 
 $router->map('GET', '/search-product', function () {
-    header('Location: View/search-product.php');
-    exit();
-});
+    require_once 'View/search-product.php';
+}, 'search-product');
 
 $router->map('POST', '/login', function () {
    
@@ -48,9 +45,9 @@ $router->map('POST', '/login', function () {
             $password = htmlspecialchars($_POST['password']);
 
             if ($authentication->login($email, $password)) {
-                header("Location: View/home.php");
+                require_once 'View/home.php';
             } else {
-                header("Location: View/login.php");
+                require_once 'View/login.php';
             }
             exit;
         }
@@ -63,13 +60,13 @@ $router->map('POST', '/register', function () {
         if (isset($_POST['form-name']) && $_POST['form-name'] === 'register-form') {
             $authentication = new AuthenticationController();
             $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-            $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-            $confirmPassword = filter_input(INPUT_POST, 'confirm-password', FILTER_SANITIZE_STRING);
+            $password = filter_input(INPUT_POST, 'password', FILTER_DEFAULT);
+            $confirmPassword = filter_input(INPUT_POST, 'confirm-password', FILTER_DEFAULT);
 
             if ($authentication->register($email, $password, $confirmPassword)) {
-                header("Location: View/login.php");
+                require_once 'View/login.php';
             } else {
-                header("Location: View/register.php");
+                require_once 'View/register.php';
             }
             exit;
         }

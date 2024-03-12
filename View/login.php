@@ -34,27 +34,34 @@ if (isset($_SESSION['user'])) {
     </head>
 
     <body>
-        <h1>Login</h1>
 
-        <form action="/food-mania/login" method="post" name="login-form">
-            <input type="hidden" name="form-name" value="login-form">
+        <div class="wrapper">
+            
+            <h1>Login</h1>
 
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Email" value="<?php echo isset($_SESSION['user']) ? $_SESSION['user']->getEmail() : (isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['email'] : ''); unset($_SESSION['old_inputs']) ?>" required>
+                <form action="/food-mania/login" method="post" name="login-form">
+                    <input type="hidden" name="form-name" value="login-form">
 
-            <label for="password">Password</label>
-            <input class="password" type="password" name="password" id="password" placeholder="Password" required>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Email" value="<?php echo isset($_SESSION['user']) ? $_SESSION['user']->getEmail() : (isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['email'] : ''); unset($_SESSION['old_inputs']) ?>" required>
 
-            <button type="submit">Login</button>
-        </form>
+                    <label for="password">Password</label>
+                    <input class="password" type="password" name="password" id="password" placeholder="Password" required>
 
-        <?php if (isset($_SESSION['error'])) { ?>
-            <p><?= $_SESSION['error'] ?></p>
-            <?php unset($_SESSION['error']); ?>
-        <?php } ?>
+                    <button class="submit" type="submit">Login</button>
+                </form>
 
-        <button class="register-button">
-            <a href="/food-mania/register">Register</a>
-        </button>
+                <?php if (isset($_SESSION['error'])) { ?>
+                    <p><?= $_SESSION['error'] ?></p>
+                    <?php unset($_SESSION['error']); ?>
+                <?php } ?>
+                
+                <div class="back-button">
+                    <a href="/food-mania/" class="home-button">Home</a>
+                    <a href="/food-mania/register" class="home-button">Register</a>
+                </div>
+        
+        </div>
+       
     </body>
 </html>

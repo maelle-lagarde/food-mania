@@ -30,7 +30,7 @@ if (isset($_SESSION['user'])) {
         <title>Register</title>
     </head>
     <body>
-        <div class="register-form_container">
+        <div class="wrapper">
             <h1>Register</h1>
 
             <form action="/food-mania/register" method="post" class="register-form" name="register-form">
@@ -45,7 +45,7 @@ if (isset($_SESSION['user'])) {
                 <label for="confirm-password">Confirm Password</label>
                 <input class="password" type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password" required>
 
-                <button type="submit">Register</button>
+                <button type="submit" class="submit">Register</button>
             </form>
 
             <?php if (isset($_SESSION['errors'])) { ?>
@@ -55,10 +55,12 @@ if (isset($_SESSION['user'])) {
                     <?php endforeach; ?>
                 </div>
             <?php } ?>
+            
+            <div class="back-button">
+                <a href="/food-mania/" class="home-button">Home</a>
+                <a href="/food-mania/login" class="home-button">Login</a>
+            </div>
 
-            <button class="login-button">
-                <a href="/food-mania/login">Login</a>
-            </button>
         </div>
     </body>
 </html>

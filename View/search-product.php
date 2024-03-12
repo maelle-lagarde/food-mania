@@ -23,5 +23,8 @@
             ?>
 
     <script src="src/apiexterne/searchProduct.js"></script>
+
+    <a href="/food-mania/" class="home-button">Home</a>
+
 </body>
 </html>

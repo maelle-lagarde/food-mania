@@ -21,31 +21,34 @@ if (session_status() === PHP_SESSION_NONE) {
     <title>Food Mania</title>
 </head>
 <body>
-    <h1>Hello you</h1>
+    <div class="wrapper">
+        <h1>Hello you</h1>
 
-    <?php if (isset($_SESSION['user'])) {
-
-            $user = $_SESSION['user'];
-            if ($user->getState() == 0 || $user->getState() == '') { ?>
-                <button class="home-button">
-                    <a href="/food-mania/login">Login</a>
-                </button>
-                <button class="home-button">
-                    <a href="/food-mania/register">Register</a>
-                </button>
-            <?php }
-        } ?>
         <?php if (isset($_SESSION['user'])) {
-            $user = $_SESSION['user'];
-            if ($user->getState() == 1) { ?>
-            <button class="home-button">
-                    <a href="/food-mania/search-product">Search products</a>
-                </button>
-                <button class="home-button">
-                    <a href="/food-mania/logout">Logout</a>
-                </button>
-            <?php }
-        } ?>
+
+                $user = $_SESSION['user'];
+                if ($user->getState() == 0 || $user->getState() == '') { ?>
+                    <a href="/food-mania/login" class="home-button">Login</a>
+
+                    <a href="/food-mania/register" class="home-button">Register</a>
+
+                <?php }
+            }
+        ?>
+            <?php if (isset($_SESSION['user'])) {
+                $user = $_SESSION['user'];
+                if ($user->getState() == 1) { ?>
+
+                    <div class="back-button">
+                        <a href="/food-mania/search-product" class="home-button">Search products</a>
+                        <a href="/food-mania/logout" class="home-button">Logout</a>
+                    </div>
+                    
+                <?php }
+            }
+            ?>
+    </div>
+    
 
 
 </body>

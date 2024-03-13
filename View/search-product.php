@@ -11,21 +11,18 @@
     <div class="wrapper">
         <h1>Display Product</h1>
 
-            <?php
-                $response = file_get_contents('https://world.openfoodfacts.org/api/v2/product/3017624010701?fields=product_name,nutriscore_data');
+        <h2 id="data-name"></h2>
 
-                $data = json_decode($response, true);
-
-                $product_name = $data['product']['product_name'];
-                $nutriscore_data = json_encode($data['product']['nutriscore_data']);
-
-                echo "<h2>$product_name</h2>";
-                echo "<p>$nutriscore_data</p>";
-                ?>
-
-        <script src="src/apiexterne/searchProduct.js"></script>
+        <h3 id="data-info"></h3>
 
         <a href="/food-mania/" class="home-button">Home</a>
+    </div>
+
+    <script src="src/apiexterne/search-product.js" defer></script>
+    
+    <div id="all-product">
+
+
     </div>
 </body>
 </html>

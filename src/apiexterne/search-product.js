@@ -36,5 +36,8 @@ async function displayProducts() {
     });
 }
 
-fetchData();
-displayProducts();
+async function initialize() {
+    await displayProducts();
+}
+
+initialize();

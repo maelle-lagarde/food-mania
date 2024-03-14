@@ -64,3 +64,33 @@ button.submit {
 button.submit:hover {
     background-color: #7328B5;
 }
+
+/* PAGE PRODUCT  */
+
+#container-product {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    padding: 0 40px;
+}
+
+#container-product img {
+    max-width: 100px;
+}
+
+.div-product {
+    border: 1px solid #555257;
+    width: 300px;
+    padding: 15px;
+}
+
+.div-product:hover {
+    border: 1px solid white;
+}
+
+.div-product p {
+    font-size: 13px;
+}
+

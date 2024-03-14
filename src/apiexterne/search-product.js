@@ -1,5 +1,3 @@
-// https://world.openfoodfacts.org/api/v2/product/3017624010701?fields=product_name,nutriscore_data,image_url
-
 async function fetchData() {
     const response = await fetch('https://world.openfoodfacts.org/api/v2/search?page_size=8&page=8&sort_by=popularity&fields=code,nutrition_grades,categories_tags_en,image_url,product_name');
     const json = await response.json();
@@ -17,18 +15,24 @@ async function displayProducts() {
         const productName = product.product_name;
         const productImage = product.image_url;
         const productCategorie = product.categories_tags_en;
+        
+        const divParent = document.createElement('div');
+        divParent.className = "div-product";
 
         const newHeading = document.createElement('h2');
-        const newImage = document.createElement('img');
-        const newCategorie = document.createElement('p');
-
         newHeading.textContent = productName;
+
+        const newImage = document.createElement('img');
         newImage.src = productImage;
+
+        const newCategorie = document.createElement('p');
         newCategorie.textContent = productCategorie;
 
-        allProductContainer.appendChild(newHeading);
-        allProductContainer.appendChild(newImage);
-        allProductContainer.appendChild(newCategorie);
+        divParent.appendChild(newHeading);
+        divParent.appendChild(newImage);
+        divParent.appendChild(newCategorie);
+
+        allProductContainer.appendChild(divParent);
     });
 }
 

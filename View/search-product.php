@@ -9,20 +9,13 @@
 </head>
 <body>
     <div class="wrapper">
-        <h1>Display Product</h1>
-
-        <h2 id="data-name"></h2>
-
-        <h3 id="data-info"></h3>
-
-        <a href="/food-mania/" class="home-button">Home</a>
+        <h1>Products</h1>
+        <div id="container-product"></div>
     </div>
+
+    <div id="container-product"></div>
 
     <script src="src/apiexterne/search-product.js" defer></script>
     
-    <div id="container-product">
-
-
-    </div>
 </body>
 </html>

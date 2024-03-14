@@ -7,45 +7,30 @@ async function fetchData() {
     return json.products;
 }
 
-const allProduct = document.querySelector('#all-product');
-console.log(allProduct);
+const allProductContainer = document.querySelector('#container-product');
 
 async function displayProducts() {
     const arrayProductFood = await fetchData();
     
     arrayProductFood.forEach(product => {
-        console.log(product);
+
+        const productName = product.product_name;
+        const productImage = product.image_url;
+        const productCategorie = product.categories_tags_en;
+
+        const newHeading = document.createElement('h2');
+        const newImage = document.createElement('img');
+        const newCategorie = document.createElement('p');
+
+        newHeading.textContent = productName;
+        newImage.src = productImage;
+        newCategorie.textContent = productCategorie;
+
+        allProductContainer.appendChild(newHeading);
+        allProductContainer.appendChild(newImage);
+        allProductContainer.appendChild(newCategorie);
     });
 }
 
-displayProducts();
-
-
-// function displayData(data) {
-    
-//     const dataName = document.getElementById('data-name');
-//     const dataInfo = document.getElementById('data-info');
-
-//     data.forEach(product => {
-//         dataName.innerText = product.product_name;
-//         dataInfo.innerText = product.nutriscore_name;
-
-//     });
-// }
-
-// let allProduct = fetchData();
-
-// if(allProduct != undefined)
-// {
-//     showData(allProduct);
-// }
-
-// function showData(toto){
-
-//     /// cibler la bonne div
-   
-
-
-
-// }
 fetchData();
+displayProducts();

@@ -20,7 +20,7 @@
 
     <script src="src/apiexterne/search-product.js" defer></script>
     
-    <div id="all-product">
+    <div id="container-product">
 
 
     </div>

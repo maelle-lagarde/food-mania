@@ -10,10 +10,14 @@
 <body>
     <div class="wrapper">
         <h1>Products</h1>
-        <div id="container-product"></div>
-    </div>
 
-    <div id="container-product"></div>
+        <div id="container-product"></div>
+
+        <div class="back-button">
+            <a href="/food-mania/" class="home-button">Home</a>
+        </div>
+
+    </div>
 
     <script src="src/apiexterne/search-product.js" defer></script>
     

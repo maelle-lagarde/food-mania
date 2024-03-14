@@ -36,6 +36,10 @@ $router->map('GET', '/search-product', function () {
     require_once 'View/search-product.php';
 }, 'search-product');
 
+$router->map('GET', '/my-products', function () {
+    require_once 'View/my-products.php';
+}, 'save-product');
+
 $router->map('POST', '/login', function () {
    
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {

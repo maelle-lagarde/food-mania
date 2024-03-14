@@ -9,9 +9,9 @@
 </head>
 <body>
     <div class="wrapper">
-        <h1>Products</h1>
+        <h1>My products</h1>
 
-        <div id="container-product"></div>
+        <div id="favorite-products"></div>
 
         <div class="back-button">
             <a href="/food-mania/" class="home-button">Home</a>
@@ -19,7 +19,7 @@
 
     </div>
 
-    <script src="src/apiexterne/search-product.js" defer></script>
+    <script src="src/apiinterne/save-product.js" defer></script>
     
 </body>
 </html>

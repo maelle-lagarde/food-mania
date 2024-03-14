@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* GENERAL SETTINGS  */
 
 * {
     font-family: "Work Sans", sans-serif;
@@ -82,6 +83,7 @@ button.submit:hover {
 
 .div-product {
     border: 1px solid #555257;
+    border-radius: 5px;
     width: 300px;
     padding: 15px;
 }

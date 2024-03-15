@@ -6,6 +6,7 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 use App\Controller\AuthenticationController;
+use App\Controller\ProductController;
 
 session_start();
 
@@ -38,7 +39,7 @@ $router->map('GET', '/search-product', function () {
 
 $router->map('GET', '/my-products', function () {
     require_once 'View/my-products.php';
-}, 'save-product');
+}, 'my-products');
 
 $router->map('POST', '/login', function () {
    
@@ -73,6 +74,23 @@ $router->map('POST', '/register', function () {
                 require_once 'View/register.php';
             }
             exit;
+        }
+    }
+});
+
+$router->map('POST', '/my-products', function () {
+   
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $product = new ProductController();
+        $name = htmlspecialchars($_POST['name']);
+        $description = htmlspecialchars($_POST['description']);
+        $image = htmlspecialchars($_POST['image']);
+        var_dump($_POST);
+
+        if ($product->addProduct($name, $description, $image)) {
+            echo 'ça a marché';
+        } else {
+            echo 'mmmmh ça marche pas';
         }
     }
 });

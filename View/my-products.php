@@ -8,6 +8,7 @@
     <title>Food Mania</title>
 </head>
 <body>
+    
     <div class="wrapper">
         <h1>My products</h1>
 
@@ -18,8 +19,6 @@
         </div>
 
     </div>
-
-    <script src="src/apiinterne/save-product.js" defer></script>
     
 </body>
 </html>

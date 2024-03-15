@@ -60,6 +60,7 @@ button.submit {
     border: 1px solid transparent;
     border-radius: 10px;
     cursor: pointer;
+    font-size: 13px;
 }
 
 button.submit:hover {
@@ -67,6 +68,16 @@ button.submit:hover {
 }
 
 /* PAGE PRODUCT  */
+
+.basket-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#basket-icon {
+    width: 40px;
+    cursor: pointer;
+}
 
 #container-product {
     display: grid;
@@ -113,4 +124,16 @@ button.submit:hover {
 
 .div-product button:hover {
     background-color: #555257;
+}
+
+.search-product-input {
+    width: 300px;
+}
+
+.search-form button {
+    width: 100px;
+}
+
+.search-form {
+    margin: 40px 0;
 }

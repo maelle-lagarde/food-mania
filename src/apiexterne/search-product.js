@@ -30,6 +30,7 @@ async function displayProducts() {
 
         const buttonProduct = document.createElement('button');
         buttonProduct.innerHTML = 'add';
+        buttonProduct.className = 'add-product-btn';
 
         divParent.appendChild(newHeading);
         divParent.appendChild(newImage);
@@ -37,42 +38,72 @@ async function displayProducts() {
         divParent.appendChild(buttonProduct);
 
         allProductContainer.appendChild(divParent);
+
+
     });
 }
 
-function connectionToDatabase() {
-    const mysql = require('mysql');
 
-    const connection = mysql.createConnection({
-        host: $_ENV['DB_HOST'],
-        user: $_ENV['DB_USER'],
-        password: $_ENV['DB_PASSWORD'],
-        database: $_ENV['DB_NAME']
-    });
-    connection.connect();
-}
 
-function addProduct() {
-    buttonProduct.addEventListener("click", () => {
-        addProductToDatabase({
-            name: productName,
-            image_url: productImage,
-            generic_name: productCategorie
-        }); 
 
-        const sql = 'INSERT INTO product (name, description, image) VALUES (?, ?, ?)';
-        
-        connection.query(sql, (error, results, fields) => {
-            if (error) throw error;
-            console.log(`Produit inséré avec succès : ${product.name}`);
-          }); 
-    });
-}
 
-connection.end();
+
+
+
+
+
+
+
+// function saveDataToDatabase () {
+
+//     const buttons = document.querySelectorAll('.add-product-btn');
+
+//     for (const button of buttons) {
+//         button.addEventListener('click', () => {
+//             fetchData();
+//         });
+//     }
+// }
+
 
 async function initialize() {
     await displayProducts();
+
+    let allProduct = document.getElementsByClassName('div-product')
+    
+    for (const button of allProduct) {
+        console.log(button.childNodes[3])
+        // let test = button.chil
+        button.childNodes[3].addEventListener('click', () => {
+
+            let name = button.childNodes[0].textContent;
+            let image = button.childNodes[1].src;
+            let description = button.childNodes[2].textContent;
+
+            
+            console.log(button, 'toto')
+
+            postProduct(name,image,description)
+        }
+        )
+    }
+}
+
+async function postProduct(name,image,description){
+    let formData = new FormData()
+
+            formData.append('name', name)
+            formData.append('image', image)
+            formData.append('description', description)
+
+            let result = await fetch('http://localhost/food-mania/my-products',{
+                method:"POST",
+                body: formData
+            })
+
+            let response = await result.text()
+            console.log(response,'coucou')
+
 }
 
 initialize();

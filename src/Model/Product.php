@@ -62,6 +62,9 @@ class Product
         $products = [];
 
         foreach ($results as $result) {
+            $imageUrl = file_get_contents($result['image']);
+            $result['image'] = $imageUrl;
+            
             $products[] = new Product(
                 $result['id'],
                 $result['name'],

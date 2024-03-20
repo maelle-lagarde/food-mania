@@ -11,9 +11,9 @@
     <div class="wrapper">
         <h1>Products</h1>
 
-        <div class="basket-container">
+        <a class="basket-container" href="/food-mania/my-products">
            <img src="public/assets/basket.svg" alt="basket icon" id="basket-icon"> 
-        </div>
+        </a>
         
         
         <div class="search-form">

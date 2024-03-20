@@ -77,6 +77,11 @@ button.submit:hover {
 #basket-icon {
     width: 40px;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#basket-icon:hover {
+    transform: scale(1.1);
 }
 
 #container-product {

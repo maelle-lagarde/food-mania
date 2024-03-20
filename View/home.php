@@ -33,6 +33,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <?php } else if ($user->getState() == 1) { ?>
                 <div class="back-button">
                     <a href="/food-mania/search-product" class="home-button">Search products</a>
+                    <a href="/food-mania/my-products" class="home-button">My products</a>
                     <a href="/food-mania/logout" class="home-button">Logout</a>
                 </div>
             <?php }

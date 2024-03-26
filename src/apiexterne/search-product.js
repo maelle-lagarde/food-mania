@@ -1,5 +1,5 @@
 async function fetchData() {
-    const response = await fetch('https://world.openfoodfacts.org/api/v2/search?page_size=8&page=8&sort_by=popularity&sort_by=nutriscore_score&fields=code,nutrition_grades,generic_name,image_url,product_name');
+    const response = await fetch('https://world.openfoodfacts.org/api/v2/search?page_size=24&sort_by=popularity&fields=generic_name,image_url,product_name');
     const json = await response.json();
     
     return json.products;
@@ -39,21 +39,8 @@ async function displayProducts() {
 
         allProductContainer.appendChild(divParent);
 
-
     });
 }
-
-
-// function saveDataToDatabase () {
-
-//     const buttons = document.querySelectorAll('.add-product-btn');
-
-//     for (const button of buttons) {
-//         button.addEventListener('click', () => {
-//             fetchData();
-//         });
-//     }
-// }
 
 
 async function initialize() {
@@ -69,9 +56,6 @@ async function initialize() {
             let name = button.childNodes[0].textContent;
             let image = button.childNodes[1].src;
             let description = button.childNodes[2].textContent;
-
-            
-            console.log(button, 'toto')
 
             postProduct(name,image,description)
         }
@@ -92,8 +76,6 @@ async function postProduct(name,image,description){
             })
 
             let response = await result.text()
-            console.log(response,'coucou')
-
 }
 
 initialize();

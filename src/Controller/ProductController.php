@@ -22,4 +22,18 @@ class ProductController
             return false;
         }
     }
+
+    public function deleteProduct(int $id): bool
+    {
+        $product = new Product();
+
+        $product->setId($id);
+        
+        try {
+            $product->add();
+            return true;
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
 }

@@ -32,7 +32,7 @@ class Product
 
     public function findOneById(int $id): false|Product{
         $pdo = new \PDO('mysql:host=' . $_ENV['DB_HOST'] . ';dbname=' . $_ENV['DB_NAME'] . ';port=' . $_ENV['DB_PORT'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD']);
-        $stmt = $pdo->prepare('SELECT * from product where id = :id');
+        $stmt = $pdo->prepare('SELECT * FROM product WHERE id = :id');
         $stmt->bindParam(':id', $id,\PDO::PARAM_INT);
         $stmt->execute();
         $result = $stmt->fetch(\PDO::FETCH_ASSOC);
@@ -94,6 +94,17 @@ class Product
         $this->setId((int)$pdo->lastInsertId());
 
         return $this;
+    }
+
+    public function delete(): void
+    {
+        $pdo = new \PDO('mysql:host=' . $_ENV['DB_HOST'] . ';dbname=' . $_ENV['DB_NAME'] . ';port=' . $_ENV['DB_PORT'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD']);
+
+        $stmt = $pdo->prepare("DELETE FROM product WHERE id = :id");
+
+        $stmt->bindValue(':id', $this->getId(), \PDO::PARAM_INT);
+
+        $stmt->execute();
     }
 
     public function getId(): ?int

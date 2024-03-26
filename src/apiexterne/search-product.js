@@ -44,16 +44,6 @@ async function displayProducts() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 // function saveDataToDatabase () {
 
 //     const buttons = document.querySelectorAll('.add-product-btn');
@@ -96,7 +86,7 @@ async function postProduct(name,image,description){
             formData.append('image', image)
             formData.append('description', description)
 
-            let result = await fetch('http://localhost/food-mania/my-products',{
+            let result = await fetch('http://localhost:8888/food-mania/my-products',{
                 method:"POST",
                 body: formData
             })

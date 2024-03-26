@@ -32,9 +32,9 @@ if (session_status() === PHP_SESSION_NONE) {
                 <a href="/food-mania/register" class="home-button">Register</a>
             <?php } else if ($user->getState() == 1) { ?>
                 <div class="back-button">
-                    <a href="/food-mania/search-product" class="home-button">Search products</a>
-                    <a href="/food-mania/my-products" class="home-button">My products</a>
-                    <a href="/food-mania/logout" class="home-button">Logout</a>
+                    <a href="/food-mania/search-product" class="header-icon"><img src="public/assets/search.svg" alt="search icon" id="search-icon"></a>
+                    <a href="/food-mania/my-products" class="header-icon"><img src="public/assets/basket.svg" alt="basket icon" id="basket-icon"></a>
+                    <a href="/food-mania/logout" class="header-icon"><img src="public/assets/logout.svg" alt="logout icon" id="logout-icon"></a>
                 </div>
             <?php }
         } else { ?>
@@ -42,6 +42,6 @@ if (session_status() === PHP_SESSION_NONE) {
             <a href="/food-mania/register" class="home-button">Register</a>
         <?php } ?>
     </div>
-    
+
 </body>
 </html>

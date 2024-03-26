@@ -26,10 +26,19 @@ $products = $productInstance->findAll();
     <div class="wrapper">
         <h1>My products</h1>
 
-        <div id="favorite-products">
-            <ul>
+        <div class="header">
+            <a class="header-icon" href="/food-mania/">
+                <img src="public/assets/home.svg" alt="home icon" id="home-icon">
+            </a>
+
+            <a class="header-icon" href="/food-mania/search-product">
+                <img src="public/assets/search.svg" alt="search icon" id="search-icon"> 
+            </a>
+        </div>  
+
+        <div id="container-product">
                 <?php foreach ($products as $product) : ?>
-                    <li>
+                    <div class="div-product">
                         <h2><?= $product->getName() ?></h2>
                         <p><?= $product->getDescription() ?></p>
                         <?php 
@@ -37,14 +46,9 @@ $products = $productInstance->findAll();
                         $productImage = base64_encode($productUrl);
                         ?>
                         <img src="data:image/jpeg;base64,<?= $productImage ?>" alt="Image">
-                    </li>
+                    </div>
                 <?php endforeach; ?>
-            </ul>
 
-        </div>
-
-        <div class="back-button">
-            <a href="/food-mania/" class="home-button">Home</a>
         </div>
 
     </div>

@@ -11,10 +11,15 @@
     <div class="wrapper">
         <h1>Products</h1>
 
-        <a class="basket-container" href="/food-mania/my-products">
-           <img src="public/assets/basket.svg" alt="basket icon" id="basket-icon"> 
-        </a>
-        
+        <div class="header">
+            <a class="header-icon" href="/food-mania/">
+                <img src="public/assets/home.svg" alt="home icon" id="home-icon">
+            </a>
+
+            <a class="header-icon" href="/food-mania/my-products">
+                <img src="public/assets/basket.svg" alt="basket icon" id="basket-icon"> 
+            </a>
+        </div>      
         
         <div class="search-form">
             <input class="search-product-input" type="text" name="search-product-input" id="search-product-input" placeholder="patate douce ?" required>
@@ -22,10 +27,6 @@
         </div>
         
         <div id="container-product"></div>
-
-        <div class="back-button">
-            <a href="/food-mania/" class="home-button">Home</a>
-        </div>
 
     </div>
 

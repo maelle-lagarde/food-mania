@@ -22,7 +22,7 @@
         </div>      
         
         <div class="search-form">
-            <input class="search-product-input" type="text" name="search-product-input" id="search-product-input" placeholder="patate douce ?" required>
+            <input class="search-product-input" type="text" name="search-product-input" id="search-product-input" placeholder="ça marche pas" required>
             <button type="submit" class="submit">search</button>
         </div>
         

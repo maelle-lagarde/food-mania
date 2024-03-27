@@ -30,7 +30,7 @@
     background-color: #555257;
 }
 
-.back-button {
+.back-button, .log-button {
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -98,7 +98,7 @@ button.submit:hover {
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
-    padding: 0 40px;
+    padding: 0 40px 40px 80px;
 }
 
 #container-product img {
